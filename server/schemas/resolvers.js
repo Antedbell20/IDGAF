@@ -36,24 +36,37 @@ const resolvers = {
 
       return { token, user };
     },
-    saveBook: async (parent, { newBook }, context) => {
+    sendMessage: async (_, {text,recipientId }, context) => {
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { savedBooks: newBook }},
+          { $push: { savedBooks: text }},
           { new: true }
         );
         return updatedUser;
       }
       throw new AuthenticationError('User needs to be signed in');
     },
-    removeBook: async (parent, { bookId }, context) => {
+    
+    addFriend: async (_, { friendId }, context) => {
+      if (context.user) {
+        const user = await User.findByIdAndUpdate(
+          context.user._id,
+          { $addToSet: { friends: friendId } },  // Assuming friends is an array of user IDs
+          { new: true }
+        ).populate('friends');
+        return user;
+      }
+      throw new AuthenticationError('User needs to be signed in');
+    },
+    removeFriend: async (parent, { friendId }, context) => {
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedBooks: { bookId }}},
+          { $pull: { friends: friendId }},
           { new: true }
-        );
+        ).populate('friends');
+       
         return updatedUser;
       }
       throw new AuthenticationError('User needs to be signed in');
