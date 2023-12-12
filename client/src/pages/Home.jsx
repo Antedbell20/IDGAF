@@ -25,7 +25,7 @@ const Home = () => {
         <div className='add'>
         <button> <img src={pic1} alt="add-image" /> Add Friend</button>
         </div>
-        <div className='search hide'>
+        <div className='search' id="hide">
         <form onSubmit={handleSubmit}>
             <div className='search-box'>
               <label htmlFor="search"></label>
