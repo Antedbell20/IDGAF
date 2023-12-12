@@ -1,15 +1,27 @@
 :root {
-   --main: rgb(21, 103, 255);
+   --main: #1086FE;
 }
+/* Nav Bar */
+nav {
+  border: 1px solid transparent;
+  border-bottom-color: rgb(192, 192, 192);
+}
+
+nav img {
+  height: 100px;
+}
+
+/* Home Page Syling */
+
+/* right side */
 .home-container {
   display: flex;
-  height: 100vh;
+  height: 85vh;
 }
 
 .left {
   width: 25%;
   background-color: #f0f0f0;
-  /* padding: 20px; */
   box-sizing: border-box;
   border: 1px solid transparent;
   border-right-color: rgb(192, 192, 192);
@@ -17,21 +29,19 @@
 
 .right {
   width: 75%;
-  /* padding: 20px; */
   box-sizing: border-box;
 }
 
 .text-box {
   border: 1px solid transparent;
   padding: 20px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 70%;
   margin-left: 20px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  /* border-radius: 10px; */
   border-top-color: rgb(192, 192, 192);
 }
 
@@ -59,6 +69,7 @@
   width: 90%; 
 }
 
+/* left side  */
 .add {
   background-color: white;
   padding: 30px;
