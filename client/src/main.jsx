@@ -4,15 +4,15 @@ import { ApolloProvider } from '@apollo/client';
 import App from './App.jsx';
 import Home from './pages/Home';
 import Login from "./pages/Login.jsx"
-import Singup from "./pages/Singup.jsx"
-import Profile from "./pages/profile"
+import Singup from "./pages/Singup"
+
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <NotFound />,
+ 
     children: [
       {
         index: true,

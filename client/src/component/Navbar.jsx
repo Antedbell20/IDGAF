@@ -19,7 +19,7 @@ function Navbar() {
           </List>
         </Links>
         <Icons>
-     
+          {/* Icons or additional elements here */}
           {/* Hamburger menu icon */}
           <HamburgerIcon onClick={toggleMenu}>
             <span></span>
