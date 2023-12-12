@@ -3,8 +3,10 @@ html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%
 }
-body {
-    
+.body {
+    display: flex;
+    height: 85vh;
+    justify-content: center;
     background-image : url("./images/hi.jpeg");
     background-size: cover;
     background-position: absolute;
@@ -15,29 +17,59 @@ body {
 main {
     display: block;
 }
-h1 {
-    font-size: 2em;
-    margin: .67em 0;
-    font-family:'Times New Roman', Times, serif;
-    
-}
+
+/* Login */
+
 .login-form {
     width: 500px;
-    margin: 50px auto;
-    font-family: Tahoma, Geneva, sans-serif;
-    font-size: 50px;
-    border: 2px solid #f1f1f1;
-    padding: 50px;
-    background-color: transparent;
-}
-.login-form h1 {
-    width: 500px;
-    font-size: 60px;
-    text-align: center;
-}
-.login-form p {
+    margin: 200px auto;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.login-form h1 {
+    position: absolute;
+    top: 0;
+    left: 30px;
+}
+
 .login-form a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #1086FE;
     font-size: 15px;
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px; 
+}
+
+.form-container {
+    /* background-color: aqua; */
+}
+
+.form-container input {
+    font-size: large;
+    width: 98%;
+    height: 30px;
+}
+
+.form-container button{
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #1086FE;
+    border: 0px;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
 }
