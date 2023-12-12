@@ -31,9 +31,11 @@ const handleButtonClick = () => {
     <div>
       <nav>
         <div class="top-right">
+          <a href="Login">
             <div class="link">
-                <a href="Login">LogOut</a>
+                LogOut
             </div>
+          </a>
         </div>
         </nav>
     <div className='home-container'>
@@ -46,6 +48,7 @@ const handleButtonClick = () => {
             <div className='search-box'>
               <label htmlFor="search"></label>
               <input
+                placeholder='Username'
                 type="text"
                 id="search"
                 name="search"
@@ -63,6 +66,7 @@ const handleButtonClick = () => {
             <div className='text-area'>
               <label htmlFor="message"></label>
               <input
+                placeholder=' Message...'
                 type="text"
                 id="message"
                 name="message"
