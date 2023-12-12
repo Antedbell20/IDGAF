@@ -53,10 +53,6 @@ main {
     right: 10px; 
 }
 
-.form-container {
-    /* background-color: aqua; */
-}
-
 .form-container input {
     font-size: large;
     width: 98%;
@@ -72,4 +68,39 @@ main {
     padding: 10px;
     font-size: 18px;
     color: white;
+}
+
+/* Signup */
+
+.signup-form {
+    width: 500px;
+    margin: 200px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form h1 {
+    position: absolute;
+    top: 0;
+    left: 30px;
+}
+
+.signup-form a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #1086FE;
+    font-size: 15px;
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px; 
 }
