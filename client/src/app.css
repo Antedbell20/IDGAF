@@ -5,9 +5,10 @@
 }
 /* Nav Bar */
 nav {
-  border: 1px solid transparent;
+  border: 1px solid white;
   border-bottom-color: var(--lines);
   position: absolute;
+  width: 100%;
 }
 
 nav img {
@@ -51,15 +52,18 @@ nav img {
   width: 98%;
   height: 30px;
   border-radius: 10px;
+  border: solid 1px;
 }
 
 .text-box button {
   font-size: large;
   width: 10%; 
   background-color: var(--main);
-  border-radius: 10px;
   color: white;
-  transition: all 0.3s;
+  transition-timing-function: ease-out;
+  transition: all 0.8s;
+  border-radius: 10px;
+  border: 0px;
 }
 
 .text-box .text-area {
@@ -89,8 +93,17 @@ nav img {
   height: 60px;
   width: 100%;
   border-radius: 10px;
+  border: 0px;
   color: white;
   font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add button img {
+  height: 25px;
+  margin: 5px;
 }
 
 /* search bar */
@@ -123,7 +136,7 @@ nav img {
 }
 
 .hide {
-  /* display: none; */
+  display: none;
 }
 
 /* hover animations */
@@ -134,4 +147,5 @@ nav img {
 
 .add button:hover {
   background-color: var(--darker);
+  scale: 1.01;
 }
