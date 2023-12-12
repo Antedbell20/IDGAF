@@ -1,11 +1,13 @@
 :root {
    --main: #1086FE;
+   --darker: #1045FE;
    --lines:  rgb(192, 192, 192);
 }
 /* Nav Bar */
 nav {
   border: 1px solid transparent;
   border-bottom-color: var(--lines);
+  position: absolute;
 }
 
 nav img {
@@ -57,6 +59,7 @@ nav img {
   background-color: var(--main);
   border-radius: 10px;
   color: white;
+  transition: all 0.3s;
 }
 
 .text-box .text-area {
@@ -88,4 +91,14 @@ nav img {
   border-radius: 10px;
   color: white;
   font-size: larger;
+}
+
+/* hover animations */
+.text-box button:hover {
+  transform: translateY(-10px);
+  background-color: var(--darker);
+}
+
+.add button:hover {
+  background-color: var(--darker);
 }
