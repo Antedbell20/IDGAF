@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDGAF</title>
 </head>
+
 <body>
-    <nav><img src="./IDGAF.jpeg" alt="logo"></nav>
-      <div id="root"></div>
+    <nav> <a href="/"><img src="./IDGAF.jpeg" alt="logo"></a>
+         <div class="top-right">
+            <div class="link" id="hide">
+                <a href="Login">LogIn</a> 
+            </div>
+            <div class="link" id="hide">
+                <a href="Signup">SignUp</a>
+            </div>
+            <div class="link" id="hide">
+                <a href="#">LogOut</a>
+            </div>
+        </div>
+    </nav>
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 </body>
+
 </html>
