@@ -44,6 +44,7 @@ const Login = () => {
             value={password}
             onChange={handleChange}
           />
+          <a href="Signup">SignUp Instead</a>
         </div>
 
         <button type="submit">Submit</button>

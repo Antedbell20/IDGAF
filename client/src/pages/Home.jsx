@@ -20,6 +20,14 @@ const Home = () => {
   };
 
   return (
+    <div>
+      <nav>
+        <div class="top-right">
+            <div class="link">
+                <a href="Login">LogOut</a>
+            </div>
+        </div>
+        </nav>
     <div className='home-container'>
       <div className='left'>
         <div className='add'>
@@ -58,6 +66,7 @@ const Home = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };

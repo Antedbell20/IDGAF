@@ -46,6 +46,7 @@ const Signup = () => {
             value={password}
             onChange={handleChange}
           />
+          <a href="Login">Login Instead</a>
         </div>
 
         <button type="submit">Submit</button>
