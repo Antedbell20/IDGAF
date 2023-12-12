@@ -1,3 +1,5 @@
+import pic1 from '../../../client/add.png'
+
 import React, { useState } from 'react';
 
 const Home = () => {
@@ -21,7 +23,7 @@ const Home = () => {
     <div className='home-container'>
       <div className='left'>
         <div className='add'>
-        <button>Add Friend</button>
+        <button> <img src={pic1} alt="add-image" /> Add Friend</button>
         </div>
         <div className='search hide'>
         <form onSubmit={handleSubmit}>
