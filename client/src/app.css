@@ -8,11 +8,12 @@ nav {
   border: 1px solid white;
   border-bottom-color: var(--lines);
   position: absolute;
-  width: 100%;
+  width: 99%;
 }
 
 nav img {
   height: 100px;
+  margin-top: -7px;
 }
 
 /* Home Page Syling */
