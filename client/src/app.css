@@ -149,11 +149,6 @@ nav a {
   padding: 10px;
 }
 
-.search form {
-  display: flex;
-  width: 100%;
-}
-
 .search-box {
   width: 100%;
   display: flex;
@@ -180,4 +175,42 @@ nav a {
 .add button:hover {
   background-color: var(--darker);
   scale: 1.01;
+}
+
+/* different screen sizing styling */
+
+@media (max-width: 1000px) {
+  .text-box {
+    width: 70%;
+  }
+}
+
+@media (max-width: 750px) {
+  .text-box .text-area {
+    width: 75%;
+  }
+
+  .text-box button {
+    width: 20%;
+    margin-left: 10px;
+  }
+
+  .add p {
+    display: none;
+  }
+
+  .add button {
+    height: 50px;
+  }
+  
+  .search button {
+  width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .search form {
+    display: flex;
+    width: 100%;
+  }
 }

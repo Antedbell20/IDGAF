@@ -41,7 +41,7 @@ const handleButtonClick = () => {
     <div className='home-container'>
       <div className='left'>
         <div className='add'>
-        <button className='add-btn' onClick={handleButtonClick}> <img src={pic1} alt="add-image" /> Add Friend</button>
+        <button className='add-btn' onClick={handleButtonClick}> <img src={pic1} alt="add-image" /> <p>Add Friend</p></button>
         </div>
         <div className='search' id="hide">
         <form onSubmit={handleSubmit}>
