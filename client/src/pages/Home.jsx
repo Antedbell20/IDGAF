@@ -1,6 +1,6 @@
 import pic1 from '../../../client/add.png'
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Home = () => {
   const [formData, setFormData] = useState({ message: '', search: '', });
