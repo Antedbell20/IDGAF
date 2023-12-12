@@ -16,6 +16,30 @@ nav img {
   margin-top: -7px;
 }
 
+nav .top-right {
+  margin-top: -5px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+nav .top-right .link {
+  text-align: center;
+  display: inline-block;
+  border: 1px solid transparent;
+  border-right-color: var(--lines);
+  border-left-color: var(--lines);
+  padding: 30px;
+  width: 70px;
+  margin: 10px 0px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
 /* Home Page Syling */
 
 .home-container {
