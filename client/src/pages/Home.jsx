@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const Home = () => {
   const [formData, setFormData] = useState({ message: '', });
@@ -18,6 +18,10 @@ const Home = () => {
   };
 
   return (
+<<<<<<< HEAD
+    <div>
+      <p>Hello</p>
+=======
     <div className='home-container'>
       <div className='left'>
         <button>Add Friend</button>
@@ -35,6 +39,7 @@ const Home = () => {
         </div>
         </form>
       </div>
+>>>>>>> 5155147a80a3a1f2975b4867444fb71f8eaebc0d
     </div>
   )
 }

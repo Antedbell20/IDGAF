@@ -1,10 +1,11 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { ApolloProvider } from '@apollo/client';
+// import { ApolloProvider } from '@apollo/client';
 import App from './App.jsx';
 import Home from './pages/Home';
 import Login from "./pages/Login.jsx"
 import Singup from "./pages/Singup"
+import Profile from "./pages/Profile.jsx"
 
 
 
