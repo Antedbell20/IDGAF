@@ -1,33 +1,44 @@
+:root {
+   --main: #1086FE;
+   --darker: #1045FE;
+   --lines:  rgb(192, 192, 192);
+}
+/* Nav Bar */
+nav {
+  border: 1px solid transparent;
+  border-bottom-color: var(--lines);
+  position: absolute;
+}
+
+nav img {
+  height: 100px;
+}
+
+/* Home Page Syling */
+
 .home-container {
   display: flex;
-  height: 100vh; 
+  height: 85vh;
+  justify-content: center;
 }
 
-.left {
-  width: 25%;
-  background-color: #f0f0f0;
-  /* padding: 20px; */
-  box-sizing: border-box;
-}
-
+/* right side */
 .right {
   width: 75%;
-  /* padding: 20px; */
   box-sizing: border-box;
 }
 
 .text-box {
   border: 1px solid transparent;
   padding: 20px;
-  position: absolute;
-  bottom: -15%;
+  position: fixed;
+  bottom: 0;
   width: 70%;
   margin-left: 20px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  /* border-radius: 10px; */
-  border-top-color: black;
+  border-top-color: var(--lines);
 }
 
 .text-box form {
@@ -45,11 +56,82 @@
 .text-box button {
   font-size: large;
   width: 10%; 
-  background-color: rgb(21, 103, 255);
+  background-color: var(--main);
   border-radius: 10px;
   color: white;
+  transition: all 0.3s;
 }
 
 .text-box .text-area {
   width: 90%; 
+}
+
+/* left side  */
+.left {
+  width: 25%;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-right-color: var(--lines);
+  overflow:scroll;
+  overflow-x:hidden;
+}
+
+.add {
+  background-color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.add button {
+  background-color: var(--main);
+  height: 60px;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  font-size: larger;
+}
+
+/* search bar */
+
+.search {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid transparent;
+  border-top-color: var(--lines);
+  padding: 10px;
+}
+
+.search form {
+  display: flex;
+  width: 100%;
+}
+
+.search-box {
+  width: 100%;
+  display: flex;
+}
+
+.search input[type="text"] {
+  width: 95%;
+}
+
+.search button {
+  width: 30%;
+}
+
+.hide {
+  /* display: none; */
+}
+
+/* hover animations */
+.text-box button:hover {
+  transform: translateY(-10px);
+  background-color: var(--darker);
+}
+
+.add button:hover {
+  background-color: var(--darker);
 }
