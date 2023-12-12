@@ -7,6 +7,7 @@ html {
     display: flex;
     height: 85vh;
     justify-content: center;
+    align-items: center;
     background-image : url("./images/hi.jpeg");
     background-size: cover;
     background-position: absolute;
@@ -22,7 +23,8 @@ main {
 
 .login-form, .signup-form {
     width: 500px;
-    margin: 200px auto;
+    height: 300px;
+    margin: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     padding: 20px;
