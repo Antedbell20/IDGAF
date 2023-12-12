@@ -25,7 +25,7 @@ const Home = () => {
         </div>
         <div className='search hide'>
         <form onSubmit={handleSubmit}>
-            <div className=''>
+            <div className='search-box'>
               <label htmlFor="search"></label>
               <input
                 type="text"
