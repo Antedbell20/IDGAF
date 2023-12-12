@@ -7,8 +7,9 @@
 nav {
   border: 1px solid white;
   border-bottom-color: var(--lines);
-  position: absolute;
+  position: fixed;
   width: 99%;
+  background-color: white;
 }
 
 nav img {
