@@ -36,6 +36,12 @@ main {
     align-items: center;
 }
 
+.signup-form {
+    height: 350px;
+}
+
+
+
 .login-form h1, .signup-form h1 {
     position: absolute;
     top: 0;
