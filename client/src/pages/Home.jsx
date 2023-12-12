@@ -66,7 +66,7 @@ const handleButtonClick = () => {
             <div className='text-area'>
               <label htmlFor="message"></label>
               <input
-                placeholder=' Message...'
+                placeholder='Message...'
                 type="text"
                 id="message"
                 name="message"

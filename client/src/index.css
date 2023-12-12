@@ -18,9 +18,9 @@ main {
     display: block;
 }
 
-/* Login */
+/* Login and Signup Styling */
 
-.login-form {
+.login-form, .signup-form {
     width: 500px;
     margin: 200px auto;
     font-family: Arial, Helvetica, sans-serif;
@@ -34,13 +34,13 @@ main {
     align-items: center;
 }
 
-.login-form h1 {
+.login-form h1, .signup-form h1 {
     position: absolute;
     top: 0;
     left: 30px;
 }
 
-.login-form a {
+.login-form a, .signup-form a {
     position: relative;
     text-decoration: none;
     color: white;
@@ -51,10 +51,6 @@ main {
     position: absolute; 
     bottom: 10px; 
     right: 10px; 
-}
-
-.form-container {
-    /* background-color: aqua; */
 }
 
 .form-container input {
