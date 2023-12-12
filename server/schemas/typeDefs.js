@@ -3,7 +3,7 @@ const typeDefs = `
 type User {
     _id: ID
     username: String
-    friends: [Friend]
+    friends: [User]
 }
 type Friend {
     _id: ID
@@ -22,6 +22,7 @@ type Mutation {
     login(username: String!, password: String!): Auth
     addUser(username: String!, password: String!): Auth
     addFriend(friendId: ID!): User
+    sendMessage(text: String!, recipientId: ID!): User
     updateFriend(friendId: ID!, friendName: String!): User
     removeFriend(friendId: ID!): User
 }

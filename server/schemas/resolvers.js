@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User,Message,Chat } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -19,6 +19,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
