@@ -1,4 +1,4 @@
-
+import React, { useState } from 'react';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +18,8 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Add your form submission logic here
+    console.log('Form submitted with:', formData);
   };
 
   return (
@@ -31,7 +33,8 @@ const Signup = () => {
             id="username"
             name="username"
             value={username}
-            onChange={handleChange}/>
+            onChange={handleChange}
+          />
         </div>
 
         <div>
@@ -41,11 +44,14 @@ const Signup = () => {
             id="password"
             name="password"
             value={password}
-            onChange={handleChange}/>
+            onChange={handleChange}
+          />
         </div>
+
+        <button type="submit">Submit</button>
       </form>
     </div>
-  )
+  );
 };
 
-export default Signup
+export default Signup;
