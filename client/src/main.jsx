@@ -5,6 +5,7 @@ import App from './App.jsx';
 import Home from './pages/Home';
 import Login from "./pages/Login.jsx"
 import Signup from "./pages/Signup"
+import './index.css';
 
 
 
