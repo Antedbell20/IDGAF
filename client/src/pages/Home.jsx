@@ -23,19 +23,21 @@ const Home = () => {
         <button>Add Friend</button>
       </div>
       <div className='right'>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="message">Message:</label>
-            <input
-              type="text"
-              id="message"
-              name="message"
-              value={message}
-              onChange={handleChange}
-            />
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+        <div className='text-box'>
+          <form onSubmit={handleSubmit}>
+            <div className='text-area'>
+              <label htmlFor="message"></label>
+              <input
+                type="text"
+                id="message"
+                name="message"
+                value={message}
+                onChange={handleChange}
+              />
+            </div>
+            <button type="submit">Send</button>
+          </form>
+        </div>
       </div>
     </div>
   );
