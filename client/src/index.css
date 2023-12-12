@@ -1,0 +1,43 @@
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+}
+body {
+    
+    background-image : url("./images/hi.jpeg");
+    background-size: cover;
+    background-position: absolute;
+    background-repeat: no-repeat;
+    font-family:'Times New Roman', Times, serif
+}
+
+main {
+    display: block;
+}
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+    font-family:'Times New Roman', Times, serif;
+    
+}
+.login-form {
+    width: 500px;
+    margin: 50px auto;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 50px;
+    border: 2px solid #f1f1f1;
+    padding: 50px;
+    background-color: transparent;
+}
+.login-form h1 {
+    width: 500px;
+    font-size: 60px;
+    text-align: center;
+}
+.login-form p {
+    font-size: 20px;
+}
+.login-form a {
+    font-size: 15px;
+}

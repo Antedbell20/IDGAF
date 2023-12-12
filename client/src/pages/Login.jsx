@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const Login = () => {
   const [formData, setFormData] = useState({
     username: '',
@@ -22,8 +23,9 @@ const Login = () => {
 
   return (
     <div>
+      
+      <form  class= "login-form" onSubmit={handleSubmit}>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
           <input
@@ -44,10 +46,11 @@ const Login = () => {
             value={password}
             onChange={handleChange}
           />
-          <a href="Signup">SignUp Instead</a>
+          
         </div>
 
         <button type="submit">Submit</button>
+        <a href="Signup"> SignUp Instead</a>
       </form>
     </div>
   );
