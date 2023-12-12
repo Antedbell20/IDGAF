@@ -20,7 +20,9 @@ const Home = () => {
   return (
     <div className='home-container'>
       <div className='left'>
+        <div className='add'>
         <button>Add Friend</button>
+        </div>
       </div>
       <div className='right'>
         <div className='text-box'>

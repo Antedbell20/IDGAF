@@ -1,6 +1,9 @@
+:root {
+   --main: rgb(21, 103, 255);
+}
 .home-container {
   display: flex;
-  height: 100vh; 
+  height: 100vh;
 }
 
 .left {
@@ -8,6 +11,8 @@
   background-color: #f0f0f0;
   /* padding: 20px; */
   box-sizing: border-box;
+  border: 1px solid transparent;
+  border-right-color: rgb(192, 192, 192);
 }
 
 .right {
@@ -20,14 +25,14 @@
   border: 1px solid transparent;
   padding: 20px;
   position: absolute;
-  bottom: -15%;
+  bottom: 0;
   width: 70%;
   margin-left: 20px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
   /* border-radius: 10px; */
-  border-top-color: black;
+  border-top-color: rgb(192, 192, 192);
 }
 
 .text-box form {
@@ -45,11 +50,27 @@
 .text-box button {
   font-size: large;
   width: 10%; 
-  background-color: rgb(21, 103, 255);
+  background-color: var(--main);
   border-radius: 10px;
   color: white;
 }
 
 .text-box .text-area {
   width: 90%; 
+}
+
+.add {
+  background-color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.add button {
+  background-color: var(--main);
+  height: 60px;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  font-size: larger;
 }
