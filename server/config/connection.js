@@ -14,5 +14,5 @@ process.on('SIGINT', () => {
   });
 });
 
-module.exports = db;
+module.exports = mongoose.connection;
 
