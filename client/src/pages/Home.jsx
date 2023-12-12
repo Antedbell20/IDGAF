@@ -3,6 +3,14 @@ import pic1 from '../../../client/add.png'
 import React, { useState } from 'react';
 
 const Home = () => {
+
+const handleButtonClick = () => {
+  const hideElement = document.getElementById('hide');
+  if (hideElement) {
+    hideElement.style.display = (hideElement.style.display === 'none') ? 'block' : 'none';
+  }
+};
+
   const [formData, setFormData] = useState({ message: '', search: '', });
 
   const { message, search } = formData;
@@ -20,10 +28,18 @@ const Home = () => {
   };
 
   return (
+    <div>
+      <nav>
+        <div class="top-right">
+            <div class="link">
+                <a href="Login">LogOut</a>
+            </div>
+        </div>
+        </nav>
     <div className='home-container'>
       <div className='left'>
         <div className='add'>
-        <button> <img src={pic1} alt="add-image" /> Add Friend</button>
+        <button className='add-btn' onClick={handleButtonClick}> <img src={pic1} alt="add-image" /> Add Friend</button>
         </div>
         <div className='search' id="hide">
         <form onSubmit={handleSubmit}>
@@ -58,6 +74,7 @@ const Home = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };
