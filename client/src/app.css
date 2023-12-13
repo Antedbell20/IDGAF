@@ -54,10 +54,10 @@ nav a {
   width: 75%;
   box-sizing: border-box;
   z-index: 0;
-  /* background-image : url("./images/hi.jpeg"); */
-    /* background-size: cover; */
-    /* background-position: absolute; */
-    /* background-repeat: no-repeat; */
+  background-image : url("./images/background.png");
+    background-size: cover;
+    background-position: absolute;
+    background-repeat: no-repeat;
 }
 
 .text-box {
@@ -242,6 +242,10 @@ nav a {
   
   .search button {
   width: 100%;
+  }
+
+  .change {
+    width: 150px;
   }
 }
 
