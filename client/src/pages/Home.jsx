@@ -1,5 +1,4 @@
-import pic1 from '../../../client/add.png'
-
+import pic1 from '../../../client/add.png';
 import React, { useState } from 'react';
 
 const Home = () => {
@@ -30,7 +29,7 @@ const handleButtonClick = () => {
   return (
     <div>
       <nav>
-        <div class="top-right">
+        <div className="top-right">
           <a href="Login">
             <div class="link">
                 LogOut
