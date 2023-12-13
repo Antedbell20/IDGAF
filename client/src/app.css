@@ -53,9 +53,9 @@ nav img {
   box-sizing: border-box;
   z-index: 0;
   background-image : url("./images/background.png");
-    background-size: cover;
+    /* background-size: cover; */
     background-position: absolute;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
   border: 1px solid transparent;
   border-top-color: var(--lines);
   transition-timing-function: ease-in-out;
