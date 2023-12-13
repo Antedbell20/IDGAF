@@ -1,16 +1,22 @@
 import pic1 from '../../../client/add.png'
 
 import { useState } from 'react';
+import ColorPicker from '../component/Colorpicker';
 
+const Home = ({ backgroundColor, onColorChange, onButtonClick }) => {
+  const handleButtonClick = () => {
+    const hideElement = document.getElementById('hide');
+    if (hideElement) {
+      hideElement.style.display = (hideElement.style.display === 'none') ? 'block' : 'none';
+    }
+  };
 
-const Home = () => {
-
-const handleButtonClick = () => {
-  const hideElement = document.getElementById('hide');
-  if (hideElement) {
-    hideElement.style.display = (hideElement.style.display === 'none') ? 'block' : 'none';
-  }
-};
+  const handleBackgroundChange = () => {
+    const changableColorDiv = document.getElementById('changable-color');
+    if (changableColorDiv) {
+      changableColorDiv.style.backgroundColor = backgroundColor;
+    }
+  };
 
   const [formData, setFormData] = useState({ message: '', search: '', });
 
@@ -61,7 +67,13 @@ const handleButtonClick = () => {
           </form>
         </div>
       </div>
-      <div className='right'>
+      <div className='right' id='changable-color'>
+        <button id='color-change'  onClick={handleBackgroundChange}>Change Background Color</button>
+        <ColorPicker
+            backgroundColor={backgroundColor}
+            onColorChange={onColorChange}
+            onButtonClick={onButtonClick}
+          />
         <div className='text-box'>
           <form onSubmit={handleSubmit}>
             <div className='text-area'>
