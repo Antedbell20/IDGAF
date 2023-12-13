@@ -9,7 +9,7 @@ import SendMessage from "../pages/SendMessage"; // Correct the import if SendMes
   const currentChatId = "507f1f77bcf86cd799439021";
 
 import pic1 from '../../../client/add.png';
-import { useState } from 'react';
+
 import ColorPicker from '../component/Colorpicker';
 
 const Home = ({ backgroundColor, onColorChange, onButtonClick }) => {
@@ -44,72 +44,57 @@ const Home = ({ backgroundColor, onColorChange, onButtonClick }) => {
   };
 
   return (
-    <div>
-        <div className="top-right">
-
-          <a href="/login">
-            <div className="link">LogOut</div>
-          </a>
+   <div>
+    <div className='top-right'>
+      <a href='login'>
+        <div className='link'>LogOut</div>
+      </a>
+    </div>
+    <div className='home-container'>
+      <div className='left'>
+        <div className='add'>
+          <button className='add-btn' onClick={handleAddFriendClick}>
+            <img src={pic1} alt="Add Friend"/> <p>Add Friend</p>
+          </button>
         </div>
-      </nav>
-      <div className='home-container'>
-        <div className='left'>
-          <div className='add'>
-            <button className='add-btn' onClick={handleAddFriendClick}>
-              <img src={pic1} alt="Add Friend" /> <p>Add Friend</p>
-            </button>
-          </div>
-          <div className='search'>
-            <form onSubmit={handleSearchSubmit}>
-              <div className='search-box'>
-                <input
-                  placeholder='Username'
-
-                  type="text"
-                  id="search"
-                  name="search"
-                  value={search}
-
-                  onChange={handleSearchChange}
-                />
-                <button type="submit">Search</button>
-              </div>
-            </form>
-          </div>
+        <div className='search'>
+          <form onSubmit={handleSearchSubmit}>
+            <div className='search-box'>
+              <input
+              placeholder='Username'
+              type='text'
+              id='search'
+              name='search'
+              value={search}
+              onchange={handleSearchChange}
+              />
+            </div>
+            <button type='submit'>Send</button>
+          </form>
         </div>
-        <div className='right'>
-          <SendMessage chatId={currentChatId} />
-        </div>
+      </div>
 
-                  onChange={handleChange}
-                />
-              </div>
-              <button type="submit">Send</button>
-            </form>
-          </div>
+      <div className='right' id="changable-color">
+        <button className='change' onclick={handleBackgroundChange}>ChangeBackground</button>
+        <div className='text-box'>
+          <form onSubmit={handleSubmit}>
+            <div className='text-area'>
+              <label htmlFor='message'></label>
+              <input
+              placeholder='Message...'
+              type="text"
+              id="message"
+              name="message"
+              value={message}
+              onChange={handleChange}
+              />
+            </div>
+            <button type='submit'>Send</button>
+          </form>
         </div>
-        <div className="right" id="changable-color">
-          <button className='change' onClick={handleBackgroundChange}>Change Background</button>
-          <div className="text-box">
-            <form onSubmit={handleSubmit}>
-              <div className="text-area">
-                <label htmlFor="message"></label>
-                <input
-                  placeholder="Message..."
-                  type="text"
-                  id="message"
-                  name="message"
-                  value={message}
-                  onChange={handleChange}
-                />
-              </div>
-              <button type="submit">Send</button>
-            </form>
-          </div>
-        </div>
-
       </div>
     </div>
+   </div>
   );
 };
 
