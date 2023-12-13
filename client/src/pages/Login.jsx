@@ -54,7 +54,7 @@ const Login = (props) => {
         <div>
           <label htmlFor="email">Email:</label>
           <input
-           placeholder="Your email"
+           placeholder="example@email.com"
                   name="email"
                   type="email"
                   value={formState.email}
@@ -65,7 +65,7 @@ const Login = (props) => {
         <div>
           <label htmlFor="password">Password:</label>
           <input
-             placeholder="******"
+             placeholder="password"
                   name="password"
                   type="password"
                   value={formState.password}

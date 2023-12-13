@@ -50,6 +50,7 @@ const Signup = () => {
           <div>
             <label htmlFor="username">Username:</label>
             <input
+              placeholder="Joe123"
               type="text"
               id="username"
               name="username"
@@ -61,6 +62,7 @@ const Signup = () => {
           <div>
             <label htmlFor="email">Email:</label>
             <input
+              placeholder="example@gmail.com"
               type="email"
               id="email"
               name="email"
@@ -72,6 +74,7 @@ const Signup = () => {
           <div>
             <label htmlFor="password">Password:</label>
             <input
+              placeholder="password"
               type="password"
               id="password"
               name="password"

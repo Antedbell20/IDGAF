@@ -5,8 +5,6 @@
 }
 /* Nav Bar */
 nav {
-  border: 1px solid white;
-  border-bottom-color: var(--lines);
   position: fixed;
   width: 99%;
   background-color: white;
@@ -51,12 +49,15 @@ nav a {
 
 /* right side */
 .right {
+  position: relative;
+  top: 80px; 
   width: 75%;
   box-sizing: border-box;
-  background-image : url("./images/hi.jpeg");
-    background-size: cover;
-    background-position: absolute;
-    background-repeat: no-repeat;
+  z-index: 0;
+  /* background-image : url("./images/hi.jpeg"); */
+    /* background-size: cover; */
+    /* background-position: absolute; */
+    /* background-repeat: no-repeat; */
 }
 
 .text-box {
@@ -109,6 +110,8 @@ nav a {
   border-right-color: var(--lines);
   overflow:scroll;
   overflow-x:hidden;
+  position: relative;
+  top: 80px; 
 }
 
 .add {
@@ -136,6 +139,36 @@ nav a {
 .add button img {
   height: 25px;
   margin: 5px;
+}
+
+/* color picker */
+.color-picker-container {
+  position: fixed;
+}
+
+.color-picker {
+  position: absolute;
+  top: 110px; 
+  right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.change {
+  font-size: large;
+  width: 245px; 
+  padding: 10px;
+  background-color: var(--main);
+  color: white;
+  transition-timing-function: ease-in-out;
+  transition: all 0.8s;
+  border-radius: 10px;
+  border: 0px;
+  position: absolute;
+  right: 0;
+  top: 270px;
+  z-index: 2;
 }
 
 /* search bar */
@@ -175,6 +208,10 @@ nav a {
 .add button:hover {
   background-color: var(--darker);
   scale: 1.01;
+}
+
+.change:hover {
+  background-color: inherit;
 }
 
 /* different screen sizing styling */
