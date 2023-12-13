@@ -70,11 +70,6 @@ const Home = ({ backgroundColor, onColorChange, onButtonClick }) => {
         </div>
         <div className="right" id="changable-color">
           <button onClick={handleBackgroundChange}>Change Background</button>
-          <ColorPicker
-            backgroundColor={backgroundColor}
-            onColorChange={onColorChange}
-            onButtonClick={onButtonClick}
-          />
           <div className="text-box">
             <form onSubmit={handleSubmit}>
               <div className="text-area">
