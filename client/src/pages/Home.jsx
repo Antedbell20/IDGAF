@@ -72,9 +72,7 @@ const Home = ({ onButtonClick }) => {
           </div>
         </div>
         <div className="right" id="changable-color">
-          <div className='button-remove'>
         <ColorPicker onColorChange={handleColorChange} />
-        </div>
           <button className='change' onClick={handleBackgroundChange}>Change Background</button>
           <div className="text-box">
             <form onSubmit={handleSubmit}>

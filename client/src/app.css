@@ -162,10 +162,6 @@ nav img {
   z-index: 2;
 }
 
-.button-remove button {
-  display: none;
-}
-
 .change {
   font-size: large;
   width: 245px; 
