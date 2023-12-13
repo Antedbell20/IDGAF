@@ -35,7 +35,6 @@ const Home = ({ backgroundColor, onColorChange, onButtonClick }) => {
 
   return (
     <div>
-      <nav>
         <div className="top-right">
           <a href="Login">
             <div class="link">
@@ -43,7 +42,6 @@ const Home = ({ backgroundColor, onColorChange, onButtonClick }) => {
             </div>
           </a>
         </div>
-      </nav>
       <div className="home-container">
         <div className="left">
           <div className="add">
