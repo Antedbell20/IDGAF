@@ -39,24 +39,10 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [backgroundColor, setBackgroundColor] = useState('#3498db');
-
-  const handleColorChange = (newColor) => {
-    setBackgroundColor(newColor);
-  };
-
-  const handleBackgroundChange = () => {
-    setBackgroundColor(backgroundColor);
-  };
-
   return (
     <ApolloProvider client={client}>
       <div className="app-container">
-        <ColorPicker  onColorChange={handleColorChange} />
-        <Outlet
-          backgroundColor={backgroundColor}
-          onButtonClick={handleBackgroundChange}
-        />
+        <Outlet/>
       </div>
     </ApolloProvider>
   );

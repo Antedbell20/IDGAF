@@ -1,13 +1,15 @@
-import pic1 from '../../../client/add.png';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ColorPicker from '../component/Colorpicker';
+import pic1 from '../../../client/add.png'; // Adjust the path based on your project structure
 
-const Home = ({ backgroundColor, onColorChange, onButtonClick }) => {
-  const handleButtonClick = () => {
-    const hideElement = document.getElementById('hide');
-    if (hideElement) {
-      hideElement.style.display = hideElement.style.display === 'none' ? 'block' : 'none';
-    }
+const Home = ({ onButtonClick }) => {
+  const [backgroundColor, setBackgroundColor] = useState('#3498db');
+  const [formData, setFormData] = useState({ message: '', search: '' });
+
+  const { message, search } = formData;
+
+  const handleColorChange = (newColor) => {
+    setBackgroundColor(newColor);
   };
 
   const handleBackgroundChange = () => {
@@ -17,9 +19,12 @@ const Home = ({ backgroundColor, onColorChange, onButtonClick }) => {
     }
   };
 
-  const [formData, setFormData] = useState({ message: '', search: '' });
-
-  const { message, search } = formData;
+  const handleButtonClick = () => {
+    const hideElement = document.getElementById('hide');
+    if (hideElement) {
+      hideElement.style.display = hideElement.style.display === 'none' ? 'block' : 'none';
+    }
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -35,13 +40,13 @@ const Home = ({ backgroundColor, onColorChange, onButtonClick }) => {
 
   return (
     <div>
-        <div className="top-right">
-          <a href="Login">
-            <div class="link">
-              LogOut
-            </div>
-          </a>
-        </div>
+      <div className="top-right">
+        <a href="Login">
+          <div className="link">
+            LogOut
+          </div>
+        </a>
+      </div>
       <div className="home-container">
         <div className="left">
           <div className="add">
@@ -67,6 +72,7 @@ const Home = ({ backgroundColor, onColorChange, onButtonClick }) => {
           </div>
         </div>
         <div className="right" id="changable-color">
+        <ColorPicker onColorChange={handleColorChange} />
           <button className='change' onClick={handleBackgroundChange}>Change Background</button>
           <div className="text-box">
             <form onSubmit={handleSubmit}>
