@@ -42,7 +42,7 @@ type Query {
 }
 
 type Mutation {
-    login(username: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addFriend(friendId: ID!): User
     removeFriend(friendId: ID!): User
