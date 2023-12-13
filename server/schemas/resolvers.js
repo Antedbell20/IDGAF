@@ -82,18 +82,24 @@ const resolvers = {
       return chat.populate('users');
     },
     sendMessage: async (parent, { content, chatId }, context) => {
-      if (!context.user) {
+   if (!context.user) {
+  
         throw new AuthenticationError('Not authenticated');
       }
+      console.log("================");
+      console.log(context.user._id);
+      console.log(chatId);
       const message = await Message.create({
         content,
         chat: chatId,
         sender: context.user._id
       });
-      await Chat.findByIdAndUpdate(chatId, { latestMessage: message._id });
+      console.log("-----------------------------");
+      await Chat.findByIdAndUpdate(chatId, { latestMessage: message._id })
+      console.log("xxxxxxxxxxxxxxxxxxxx");
       return message.populate('sender');
     },
-    
+ 
   },
 };
 
