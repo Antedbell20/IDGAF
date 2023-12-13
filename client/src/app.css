@@ -60,7 +60,7 @@ nav img {
   transition-timing-function: ease-in-out;
   transition: all 1.8s;
   height: 88vh;
-  background-color: #918DE6;
+  background-color: #292553;
 }
 
 .text-box {
@@ -160,10 +160,6 @@ nav img {
   padding: 10px;
   border-radius: 10px;
   z-index: 2;
-}
-
-.button-remove button {
-  display: none;
 }
 
 .change {

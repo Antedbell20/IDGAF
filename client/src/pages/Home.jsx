@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ColorPicker from '../component/Colorpicker';
-import pic1 from '../../../client/add.png'; // Adjust the path based on your project structure
+import pic1 from '../../../client/add.png';
 
 const Home = ({ onButtonClick }) => {
   const [backgroundColor, setBackgroundColor] = useState('#3498db');
@@ -72,9 +72,7 @@ const Home = ({ onButtonClick }) => {
           </div>
         </div>
         <div className="right" id="changable-color">
-          <div className='button-remove'>
         <ColorPicker onColorChange={handleColorChange} />
-        </div>
           <button className='change' onClick={handleBackgroundChange}>Change Background</button>
           <div className="text-box">
             <form onSubmit={handleSubmit}>
