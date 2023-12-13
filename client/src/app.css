@@ -58,6 +58,8 @@ nav img {
     background-repeat: no-repeat;
   border: 1px solid transparent;
   border-top-color: var(--lines);
+  transition-timing-function: ease-in-out;
+  transition: all 1.8s;
 }
 
 .text-box {
