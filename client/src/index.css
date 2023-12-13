@@ -52,7 +52,7 @@ main {
     color: white;
     padding: 10px;
     border-radius: 10px;
-    background-color: #1086FE;
+    background-color: #8fa3f3;
     font-size: 15px;
     position: absolute; 
     bottom: 10px; 
@@ -68,7 +68,7 @@ main {
 .form-container button{
     margin-top: 10px;
     border-radius: 10px;
-    background-color: #1086FE;
+    background-color: #8fa3f3;
     border: 0px;
     width: 100%;
     padding: 10px;
@@ -80,10 +80,10 @@ main {
 
 /* hover animations */
 .form-container button:hover {
-    background-color: #1045FE;
+    background-color: #6279e3;
     scale: 1.01;
 }
 
 .login-form a:hover, .signup-form a:hover {
-    background-color: #1045FE;
+    background-color: #6279e3;
 }

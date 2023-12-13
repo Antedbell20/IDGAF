@@ -1,7 +1,8 @@
 :root {
-   --main: #1086FE;
-   --darker: #1045FE;
+   --main: #8fa3f3;
+   --darker: #6279e3;
    --lines:  rgb(192, 192, 192);
+   --darkest: #4255ac;
 }
 /* Nav Bar */
 nav {
@@ -53,26 +54,27 @@ nav img {
   box-sizing: border-box;
   z-index: 0;
   background-image : url("./images/background.png");
-    /* background-size: cover; */
-    background-position: absolute;
-    /* background-repeat: no-repeat; */
+  background-position: absolute;
   border: 1px solid transparent;
   border-top-color: var(--lines);
   transition-timing-function: ease-in-out;
   transition: all 1.8s;
+  height: 88vh;
+  background-color: #918DE6;
 }
 
 .text-box {
-  border: 1px solid transparent;
+  border: 1px solid;
   padding: 20px;
   position: fixed;
-  bottom: 0;
+  bottom: -10px;
   width: 72%;
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  border-top-color: var(--lines);
-  background-color: white;
+  background-color: var(--darkest);
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 .text-box form {
@@ -80,19 +82,21 @@ nav img {
   display: flex;
 }
 
-.text-box input[type="text"] {
+.text-box input {
   font-size: large;
   width: 98%;
   height: 30px;
   border-radius: 10px;
-  border: solid 1px;
+  border: 0px;
+  background-color: var(--main);
+  color: white;
 }
 
 .text-box button {
   font-size: large;
   width: 10%; 
-  background-color: var(--main);
-  color: white;
+  background-color: white;
+  color: var(--darkest);
   transition-timing-function: ease-out;
   transition: all 0.8s;
   border-radius: 10px;
@@ -106,18 +110,17 @@ nav img {
 /* left side  */
 .left {
   width: 25%;
-  background-color: #f0f0f0;
+  background-color: #c6ccff;
   box-sizing: border-box;
   border: 1px solid transparent;
   border-right-color: var(--lines);
-  overflow:scroll;
-  overflow-x:hidden;
   position: relative;
   top: 80px; 
+  height: 88vh;
 }
 
 .add {
-  background-color: white;
+  background-color: var(--darkest);
   padding: 30px;
   display: flex;
   justify-content: center;
@@ -182,6 +185,9 @@ nav img {
   border: 1px solid transparent;
   border-top-color: var(--lines);
   padding: 10px;
+  background-color: var(--darkest);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .search-box {
@@ -191,10 +197,18 @@ nav img {
 
 .search input[type="text"] {
   width: 95%;
+  background-color: var(--main);
+  border: 0px;
+  border-radius: 7px;
 }
 
 .search button {
   width: 30%;
+  background-color: white;
+  border-radius: 7px;
+  border: 0px;
+  transition-timing-function: ease-in-out;
+  transition: all 0.3s;
 }
 
 #hide {
@@ -204,7 +218,11 @@ nav img {
 /* hover animations */
 .text-box button:hover {
   transform: translateY(-10px);
-  background-color: var(--darker);
+  background-color:  #e3e0e0;
+}
+
+.search button:hover {
+  background-color:  #e3e0e0;
 }
 
 .add button:hover {
