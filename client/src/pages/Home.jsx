@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import ColorPicker from '../component/Colorpicker';
-import pic1 from '../../../client/add.png';
+import SendMessage from '../component/box/SendMessage'; // Adjust the path as necessary
+import ColorPicker from '../component/Colorpicker'; // Adjust the path as necessary
+import pic1 from '../../../client/add.png'; // Adjust the path as necessary
 
-const Home = ({ onButtonClick }) => {
+const Home = () => {
   const [backgroundColor, setBackgroundColor] = useState('#3498db');
   const [formData, setFormData] = useState({ message: '', search: '' });
-
   const { message, search } = formData;
+  const currentChatId = "507f1f77bcf86cd799439021"; // Replace with your logic
 
   const handleColorChange = (newColor) => {
     setBackgroundColor(newColor);
@@ -42,9 +43,7 @@ const Home = ({ onButtonClick }) => {
     <div>
       <div className="top-right">
         <a href="Login">
-          <div className="link">
-            LogOut
-          </div>
+          <div className="link">LogOut</div>
         </a>
       </div>
       <div className="home-container">
@@ -54,10 +53,9 @@ const Home = ({ onButtonClick }) => {
               <img src={pic1} alt="add-image" /> <p>Add Friend</p>
             </button>
           </div>
-          <div className="search" id="hide">
+          <div className="search" id="hide" style={{ display: 'none' }}>
             <form onSubmit={handleSubmit}>
               <div className="search-box">
-                <label htmlFor="search"></label>
                 <input
                   placeholder="Username"
                   type="text"
@@ -66,30 +64,15 @@ const Home = ({ onButtonClick }) => {
                   value={search}
                   onChange={handleChange}
                 />
+                <button type="submit">Search</button>
               </div>
-              <button type="submit">Send</button>
             </form>
           </div>
         </div>
         <div className="right" id="changable-color">
-        <ColorPicker onColorChange={handleColorChange} />
+          <ColorPicker onColorChange={handleColorChange} />
           <button className='change' onClick={handleBackgroundChange}>Change Background</button>
-          <div className="text-box">
-            <form onSubmit={handleSubmit}>
-              <div className="text-area">
-                <label htmlFor="message"></label>
-                <input
-                  placeholder="Message..."
-                  type="text"
-                  id="message"
-                  name="message"
-                  value={message}
-                  onChange={handleChange}
-                />
-              </div>
-              <button type="submit">Send</button>
-            </form>
-          </div>
+          <SendMessage chatId={currentChatId} />
         </div>
       </div>
     </div>
