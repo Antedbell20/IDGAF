@@ -40,6 +40,7 @@ const Login = (props) => {
     });
   };
   return (
+    <div>
     <div className='body'>
       <div className="card-body">
          {data ? (
@@ -86,6 +87,7 @@ const Login = (props) => {
           </>
         )}
       </div>
+    </div>
     </div>
   );
 };

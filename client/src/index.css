@@ -5,14 +5,24 @@ html {
 }
 .body {
     display: flex;
-    height: 85vh;
+    position: relative;
+    top: 80px; 
+    height: 88vh;
     justify-content: center;
     align-items: center;
-    background-image : url("./images/hi.jpeg");
-    background-size: cover;
+    background-image : url("./images/background.png");
+    background-color: #4255ac;
+    /* background-size: cover; */
     background-position: absolute;
-    background-repeat: no-repeat;
-    font-family:'Times New Roman', Times, serif
+    /* background-repeat: no-repeat; */
+    font-family:'Times New Roman', Times, serif;
+    position: relative;
+    z-index: 10;
+}
+
+.color-picker {
+    z-index: 2;
+    pointer-events: none;
 }
 
 main {
