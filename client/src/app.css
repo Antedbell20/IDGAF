@@ -1,15 +1,13 @@
 :root {
-   --main: #1086FE;
-   --darker: #1045FE;
+   --main: #8fa3f3;
+   --darker: #6279e3;
    --lines:  rgb(192, 192, 192);
+   --darkest: #4255ac;
 }
 /* Nav Bar */
 nav {
-  border: 1px solid white;
-  border-bottom-color: var(--lines);
   position: fixed;
-  width: 99%;
-  background-color: white;
+  width: 80%;
 }
 
 nav img {
@@ -17,15 +15,14 @@ nav img {
   margin-top: -7px;
 }
 
-nav .top-right {
-  margin-top: -110px;
+.top-right {
   font-family: Arial, Helvetica, sans-serif;
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: fixed;
+  top: 5px;
+  right: 10px;
 }
 
-nav .top-right .link {
+.top-right .link {
   text-align: center;
   display: inline-block;
   border: 1px solid transparent;
@@ -36,7 +33,7 @@ nav .top-right .link {
   margin: 10px 0px;
 }
 
-nav a {
+.top-right a {
   text-decoration: none;
   color: black;
 }
@@ -51,25 +48,33 @@ nav a {
 
 /* right side */
 .right {
+  position: relative;
+  top: 80px; 
   width: 75%;
   box-sizing: border-box;
-  background-image : url("./images/hi.jpeg");
-    background-size: cover;
-    background-position: absolute;
-    background-repeat: no-repeat;
+  z-index: 0;
+  background-image : url("./images/background.png");
+  background-position: absolute;
+  border: 1px solid transparent;
+  border-top-color: var(--lines);
+  transition-timing-function: ease-in-out;
+  transition: all 1.8s;
+  height: 88vh;
+  background-color: #918DE6;
 }
 
 .text-box {
-  border: 1px solid transparent;
+  border: 1px solid;
   padding: 20px;
   position: fixed;
-  bottom: 0;
+  bottom: -10px;
   width: 72%;
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  border-top-color: var(--lines);
-  background-color: white;
+  background-color: var(--darkest);
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 .text-box form {
@@ -77,19 +82,21 @@ nav a {
   display: flex;
 }
 
-.text-box input[type="text"] {
+.text-box input {
   font-size: large;
   width: 98%;
   height: 30px;
   border-radius: 10px;
-  border: solid 1px;
+  border: 0px;
+  background-color: var(--main);
+  color: white;
 }
 
 .text-box button {
   font-size: large;
   width: 10%; 
-  background-color: var(--main);
-  color: white;
+  background-color: white;
+  color: var(--darkest);
   transition-timing-function: ease-out;
   transition: all 0.8s;
   border-radius: 10px;
@@ -103,16 +110,17 @@ nav a {
 /* left side  */
 .left {
   width: 25%;
-  background-color: #f0f0f0;
+  background-color: #c6ccff;
   box-sizing: border-box;
   border: 1px solid transparent;
   border-right-color: var(--lines);
-  overflow:scroll;
-  overflow-x:hidden;
+  position: relative;
+  top: 80px; 
+  height: 88vh;
 }
 
 .add {
-  background-color: white;
+  background-color: var(--darkest);
   padding: 30px;
   display: flex;
   justify-content: center;
@@ -138,6 +146,36 @@ nav a {
   margin: 5px;
 }
 
+/* color picker */
+.color-picker-container {
+  position: fixed;
+}
+
+.color-picker {
+  position: absolute;
+  top: 110px; 
+  right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.change {
+  font-size: large;
+  width: 245px; 
+  padding: 10px;
+  background-color: var(--main);
+  color: white;
+  transition-timing-function: ease-in-out;
+  transition: all 0.8s;
+  border-radius: 10px;
+  border: 0px;
+  position: absolute;
+  right: 0;
+  top: 270px;
+  z-index: 2;
+}
+
 /* search bar */
 
 .search {
@@ -147,6 +185,9 @@ nav a {
   border: 1px solid transparent;
   border-top-color: var(--lines);
   padding: 10px;
+  background-color: var(--darkest);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .search-box {
@@ -156,10 +197,18 @@ nav a {
 
 .search input[type="text"] {
   width: 95%;
+  background-color: var(--main);
+  border: 0px;
+  border-radius: 7px;
 }
 
 .search button {
   width: 30%;
+  background-color: white;
+  border-radius: 7px;
+  border: 0px;
+  transition-timing-function: ease-in-out;
+  transition: all 0.3s;
 }
 
 #hide {
@@ -169,12 +218,20 @@ nav a {
 /* hover animations */
 .text-box button:hover {
   transform: translateY(-10px);
-  background-color: var(--darker);
+  background-color:  #e3e0e0;
+}
+
+.search button:hover {
+  background-color:  #e3e0e0;
 }
 
 .add button:hover {
   background-color: var(--darker);
   scale: 1.01;
+}
+
+.change:hover {
+  background-color: inherit;
 }
 
 /* different screen sizing styling */
@@ -205,6 +262,10 @@ nav a {
   
   .search button {
   width: 100%;
+  }
+
+  .change {
+    width: 150px;
   }
 }
 

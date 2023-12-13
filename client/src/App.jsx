@@ -1,4 +1,11 @@
+// src/App.js
+
+import React, { useState } from 'react';
+import Home from './pages/Home';
+import Navbar from './component/Navbar';
+import ColorPicker from './component/Colorpicker';
 import './App.css';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,8 +14,6 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
-
-import Navbar from './component/Navbar';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -35,11 +40,25 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [backgroundColor, setBackgroundColor] = useState('#3498db');
+
+  const handleColorChange = (newColor) => {
+    setBackgroundColor(newColor);
+  };
+
+  const handleBackgroundChange = () => {
+    setBackgroundColor(backgroundColor);
+  };
+
   return (
     <ApolloProvider client={client}>
-        <Navbar />
-          <Outlet />
-       
+      <div className="app-container">
+        <ColorPicker  onColorChange={handleColorChange} />
+        <Home
+          backgroundColor={backgroundColor}
+          onButtonClick={handleBackgroundChange}
+        />
+      </div>
     </ApolloProvider>
   );
 }
