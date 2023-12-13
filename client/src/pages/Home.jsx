@@ -1,5 +1,7 @@
-import pic1 from '../../../client/add.png';
-import React, { useState } from 'react';
+import pic1 from '../../../client/add.png'
+
+import { useState } from 'react';
+
 
 const Home = () => {
 
