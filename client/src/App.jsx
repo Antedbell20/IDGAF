@@ -43,22 +43,21 @@ function App() {
   const [backgroundColor, setBackgroundColor] = useState('#3498db');
 
   const handleColorChange = (newColor) => {
-    console.log("Selected Color:", newColor);
     setBackgroundColor(newColor);
   };
 
-  const handleButtonClick = () => {
-    console.log("Button Clicked!");
+  const handleBackgroundChange = () => {
+    setBackgroundColor(backgroundColor);
   };
 
   return (
     <ApolloProvider client={client}>
       <div className="app-container">
         <Navbar />
+        <ColorPicker onColorChange={handleColorChange} />
         <Home
           backgroundColor={backgroundColor}
-          onColorChange={handleColorChange}
-          onButtonClick={handleButtonClick}
+          onButtonClick={handleBackgroundChange}
         />
       </div>
     </ApolloProvider>
