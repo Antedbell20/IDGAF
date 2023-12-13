@@ -37,3 +37,32 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+
+export const SEND_MESSAGE = gql`
+  mutation sendMessage($content: String!, $chatId: ID!) {
+    sendMessage(content: $content, chatId: $chatId) {
+      _id
+      content
+      sender {
+        _id
+        username
+      }
+    }
+  }
+`;
+
+
+export const GET_MESSAGES = gql`
+  query GetMessages($chatId: ID!) {
+    getMessages(chatId: $chatId) {
+      _id
+      content
+      sender {
+        _id
+        username
+      }
+      createdAt
+    }
+  }
+`;
