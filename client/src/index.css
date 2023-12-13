@@ -74,4 +74,16 @@ main {
     padding: 10px;
     font-size: 18px;
     color: white;
+    transition-timing-function: ease-out;
+    transition: all 0.5s;
+}
+
+/* hover animations */
+.form-container button:hover {
+    background-color: #1045FE;
+    scale: 1.01;
+}
+
+.login-form a:hover, .signup-form a:hover {
+    background-color: #1045FE;
 }
