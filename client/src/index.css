@@ -6,7 +6,7 @@ html {
 .body {
     display: flex;
     position: relative;
-    top: 80px; 
+    top: 90px; 
     height: 88vh;
     justify-content: center;
     align-items: center;
