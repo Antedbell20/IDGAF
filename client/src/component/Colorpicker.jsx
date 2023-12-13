@@ -13,7 +13,7 @@ const ColorPicker = ({ onColorChange }) => {
     <div>
       <button>Pick Color</button>
       <div>
-        <ChromePicker color={color} onChange={handleChange} />
+        <ChromePicker color={color} onChange={handleChange}  className="color-picker"/>
       </div>
     </div>
   );
