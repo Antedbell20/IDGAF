@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ColorPicker from '../component/Colorpicker';
-import pic1 from '../../../client/add.png'; // Adjust the path based on your project structure
+import pic1 from '../../../client/add.png';
 
 const Home = ({ onButtonClick }) => {
   const [backgroundColor, setBackgroundColor] = useState('#3498db');
