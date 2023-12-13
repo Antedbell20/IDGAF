@@ -110,7 +110,7 @@ nav img {
 /* left side  */
 .left {
   width: 25%;
-  background-color: #c6ccff;
+  background-color: var(--darkest);
   box-sizing: border-box;
   border: 1px solid transparent;
   border-right-color: var(--lines);
@@ -120,10 +120,13 @@ nav img {
 }
 
 .add {
+  border: 1px solid transparent;
+  border-bottom-color: var(--lines);
   background-color: var(--darkest);
   padding: 30px;
   display: flex;
   justify-content: center;
+
 }
 
 .add button {
@@ -182,8 +185,7 @@ nav img {
   display: flex;
   justify-content: center;
   background-color: white;
-  border: 1px solid transparent;
-  border-top-color: var(--lines);
+  border: 1px solid;
   padding: 10px;
   background-color: var(--darkest);
   border-bottom-left-radius: 10px;
