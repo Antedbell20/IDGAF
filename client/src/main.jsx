@@ -4,7 +4,7 @@ import App from './App.jsx';
 import Home from './pages/Home.jsx';
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup";
-import Search from "./pages/search"; // Ensure the import is correct
+// import Search from "./pages/Search"; // Ensure the import is correct
 import './index.css';
 
 const router = createBrowserRouter([
@@ -24,10 +24,10 @@ const router = createBrowserRouter([
         path: '/Signup',
         element: <Signup />
       },
-      {
-        path: '/search', // Updated path for the search page
-        element: <Search />
-      }
+      // {
+      //   path: '/search', // Updated path for the search page
+      //   element: <Search />
+      // }
     ],
   },
 ]);
