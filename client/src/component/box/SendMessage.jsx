@@ -12,13 +12,14 @@ const SendMessage = ({ chatId }) => {
 
     try {
    
-      await sendMessage({
+      const {data} = await sendMessage({
         variables: {
           content: message,
           chatId,
         },
       });
-      setMessage(''); // Clear the message input after sending
+      console.log(data)
+      //setMessage(''); // Clear the message input after sending
     } catch (err) {
       console.error("Error sending message:", err);
     }

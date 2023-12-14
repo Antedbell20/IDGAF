@@ -21,5 +21,21 @@ function App(){
         <Button variant='text' type="submit">text</Button>
         </Box>
     </div>;
+
+
+function addExistingFriends(database, friendsList) {
+   // Iterate over the database of friends
+   for (let i = 0; i < database.length; i++) {
+       const friend = database[i];
+
+       // Check if the friend is not already in the friends list
+       if (!friendsList.includes(friend)) {
+           friendsList.push(friend);
+       }
+   }
+
+   return friendsList;
 }
+}
+
 export default App;

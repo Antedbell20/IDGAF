@@ -1,12 +1,12 @@
-const { AuthenticationError } = require('apollo-server-express');
+// const { AuthenticationError } = require('apollo-server-express');
 const { User, Message, Chat } = require('../models');
-const { signToken } = require('../utils/auth');
+const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError;
       }
       return await User.findById(context.user._id).populate('friends');
     },
@@ -18,19 +18,19 @@ const resolvers = {
     },
     chats: async (parent, args, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError
       }
-      return await Chat.find({ users: { $in: [context.user._id] } }).populate('users');
+      return await Chat.find({ users: { $in: [context.user._id] } }).populate('messages');
     },
     chat: async (parent, { chatId }, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError
       }
       return await Chat.findById(chatId).populate('users');
     },
     messages: async (parent, { chatId }, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError
       }
       return await Message.find({ chat: chatId }).populate('sender');
     },
@@ -45,18 +45,18 @@ const resolvers = {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
       if (!user) {
-        throw new AuthenticationError('User Not Found');
+        throw AuthenticationError
       }
       const correctPw = await user.isCorrectPassword(password);
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw AuthenticationError
       }
       const token = signToken(user);
       return { token, user };
     },
     addFriend: async (parent, { friendId }, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError
       }
       return await User.findByIdAndUpdate(
         context.user._id,
@@ -66,7 +66,7 @@ const resolvers = {
     },
     removeFriend: async (parent, { friendId }, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError
       }
       return await User.findByIdAndUpdate(
         context.user._id,
@@ -76,15 +76,15 @@ const resolvers = {
     },
     createChat: async (parent, { chatName, users }, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError
       }
       const chat = await Chat.create({ chatName, users, groupAdmin: context.user._id });
       return chat.populate('users');
     },
     sendMessage: async (parent, { content, chatId }, context) => {
-   if (!context.user) {
-  
-        throw new AuthenticationError('Not authenticated');
+      if (!context.user) {
+
+        throw AuthenticationError
       }
       console.log("================");
       console.log(context.user._id);
@@ -99,7 +99,7 @@ const resolvers = {
       console.log("xxxxxxxxxxxxxxxxxxxx");
       return message.populate('sender');
     },
- 
+
   },
 };
 
