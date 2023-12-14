@@ -149,34 +149,83 @@ main {
   transform: translateX(-50%);
 }
 
-/* Screen sizings */
-@media (max-width: 1000px) {
-    .send-button {
-      width: 20%;
-    }
-  }
+/* Users usernam in chat */
 
   .chat-container {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center; /* Center children vertically */
-  align-items: center; /* Center children horizontally */
-  width: 50%; /* Full width of its container */
-  height: 50%; /* Full height of its container */
-  position: relative; /* Positioning context for absolute children */
-  color:white;
+  flex-direction: column; 
+  justify-content: center; 
+  padding: 10px;
+  font-size: larger;
+  text-transform: capitalize;
+  color: black;
+  position: relative; 
+  background-color: #182795;
+  color: white;
+  top: -110px;
+  left: 102%;
+  border-radius: 20px; 
+  box-shadow: 0 4px 8px black; 
+  overflow: hidden; 
+  z-index: 1;
 }
 
-/* If the chat container has a fixed or absolute positioning */
-.chat-container {
-  position: fixed; /* or 'absolute' */
-  top: 20%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  width: 300px; /* Width of the chat container */
-  height: 90px; /* Height of the chat container */
- /* Background color for visibility */
-  border-radius: 10px; /* Optional border-radius for aesthetics */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-  overflow: hidden; /* In case of overflow, it hides the excess */
+/* All users display */
+
+._userListContainer_itrsw_29 {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  color: white;
+  position: fixed;
+  left: 15px;
+  width: 24%;
+}
+
+._userListContainer_itrsw_29 h2 {
+  padding: 30px;
+  width: 80%;
+  padding-top: 0px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid;
+}
+
+._userListContainer_itrsw_29 li {
+  list-style: none;
+  text-align: center;
+  padding: 25px;
+}
+
+._userListItem_itrsw_39 {
+  background-color: #182795;
+  border-radius: 10px;
+  max-width: 300px;
+} 
+
+/* Screen sizings */
+@media (max-width: 1000px) {
+  ._userListContainer_itrsw_29 h2 {
+    width: 80%;
+    padding-right: 10px;
+    padding-left: 0px;
+  }
+  
+  ._userListContainer_itrsw_29 li {
+    position: relative;
+    max-width: 90px;
+    left: -27px;
+    padding: 15px;
+    font-size: larger;
+  }
+  
+}
+
+@media (min-width: 1000px) {
+  ._userListContainer_itrsw_29 ul {
+    display: flex;
+    flex-direction: column; 
+    padding: 0;
+    margin: 0;
+  }
 }

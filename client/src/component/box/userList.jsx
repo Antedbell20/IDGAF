@@ -35,13 +35,10 @@ function UserList() {
   return (
     <div className={styles.container}>
       <div className={styles.addFriendSection}>
-        <button onClick={handleAddFriend} disabled={!selectedUser}>
-          Add Friend
-        </button>
       </div>
       <div className={styles.usersSection}>
         <div className={styles.userListContainer}>
-          <h2 className={styles.userListTitle}>All Users:</h2>
+          <h2 className={styles.userListTitle}>All Users</h2>
           <ul className={styles.userList}>
             {data.getAllUsersExceptMe.map((user) => (
               <li
@@ -56,7 +53,6 @@ function UserList() {
         </div>
       </div>
       <div className={styles.chatSection}>
-        {/* Display the chat with the selected friend */}
         {selectedUser && <Chat selectedUser={selectedUser} />}
       </div>
     </div>

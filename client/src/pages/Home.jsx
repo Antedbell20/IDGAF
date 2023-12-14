@@ -51,12 +51,11 @@ const Home = () => {
         <div className="left">
           <div className="add">
             <button className="add-btn" onClick={handleToggleUserList}>
-              <img src={pic1} alt="add-image" /><p>Add Friend</p>
+              <img src={pic1} alt="add-image" /><p>Chat</p>
             </button>
           </div>
           {showUserList && <UserList onUserSelect={setSelectedUser} />}
           <div className="search" id="hide" style={{ display: 'none' }}>
-            {/* ... */}
           </div>
         </div>
         <div className="right" id="changable-color">
