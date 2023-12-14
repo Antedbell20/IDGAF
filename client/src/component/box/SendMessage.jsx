@@ -6,19 +6,21 @@ const SendMessage = ({ chatId }) => {
   const [message, setMessage] = useState('');
   const [sendMessage, { loading, error }] = useMutation(SEND_MESSAGE);
 
+
   const handleSendMessage = async (event) => {
     event.preventDefault();
     if (!message.trim()) return;
 
     try {
    
-      await sendMessage({
+      const {data} = await sendMessage({
         variables: {
           content: message,
           chatId,
         },
       });
-      setMessage(''); // Clear the message input after sending
+      console.log(data)
+      //setMessage(''); // Clear the message input after sending
     } catch (err) {
       console.error("Error sending message:", err);
     }

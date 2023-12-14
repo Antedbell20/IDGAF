@@ -1,14 +1,18 @@
-const { AuthenticationError } = require('apollo-server-express');
+// const { AuthenticationError } = require('apollo-server-express');
 const { User, Message, Chat } = require('../models');
+
 const { signToken } = require('../utils/auth');
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Types;
+
+const { signToken, AuthenticationError } = require('../utils/auth');
+
 
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError;
       }
       return await User.findById(context.user._id).populate('friends');
     },
@@ -20,19 +24,19 @@ const resolvers = {
     },
     chats: async (parent, args, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError
       }
       return await Chat.find({ users: { $in: [context.user._id] } }).populate('users');
     },
     chat: async (parent, { chatId }, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError
       }
-      return await Chat.findById(chatId).populate('users');
+      return await Chat.findById(chatId).populate('messages');
     },
     messages: async (parent, { chatId }, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError
       }
       return await Message.find({ chat: chatId }).populate('sender');
     },
@@ -125,15 +129,16 @@ const resolvers = {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
       if (!user) {
-        throw new AuthenticationError('User Not Found');
+        throw AuthenticationError
       }
       const correctPw = await user.isCorrectPassword(password);
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw AuthenticationError
       }
       const token = signToken(user);
       return { token, user };
     },
+
 
 
     
@@ -160,6 +165,13 @@ addFriend: async (parent, { username }, context) => {
 
     // Add the friend's ID to the current user's friends list
     const updatedUser = await User.findByIdAndUpdate(
+=======
+    addFriend: async (parent, { friendId }, context) => {
+      if (!context.user) {
+        throw AuthenticationError
+      }
+      return await User.findByIdAndUpdate(
+
         context.user._id,
         { $addToSet: { Friends: friend._id } },
         { new: true }
@@ -174,7 +186,7 @@ addFriend: async (parent, { username }, context) => {
 
     removeFriend: async (parent, { friendId }, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError
       }
       return await User.findByIdAndUpdate(
         context.user._id,
@@ -184,15 +196,15 @@ addFriend: async (parent, { username }, context) => {
     },
     createChat: async (parent, { chatName, users }, context) => {
       if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+        throw AuthenticationError
       }
       const chat = await Chat.create({ chatName, users, groupAdmin: context.user._id });
       return chat.populate('users');
     },
     sendMessage: async (parent, { content, chatId }, context) => {
-   if (!context.user) {
-  
-        throw new AuthenticationError('Not authenticated');
+      if (!context.user) {
+
+        throw AuthenticationError
       }
       console.log("================");
       console.log(context.user._id);
@@ -207,6 +219,7 @@ addFriend: async (parent, { username }, context) => {
       console.log("xxxxxxxxxxxxxxxxxxxx");
       return message.populate('sender');
     },
+
     getMessages: async (parent,{chatId},context)=>{
       const currentChatId = new ObjectId("507f1f77bcf86cd799439021");
       const message = await Message.findById({currentChatId});
@@ -233,6 +246,9 @@ addFriend: async (parent, { username }, context) => {
             return message;
         }
  
+
+
+
   },
 };
 

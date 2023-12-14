@@ -5,6 +5,7 @@ import pic1 from '../../../client/add.png'; // Adjust the path as necessary
 import UserList from '../component/box/userList'; // Adjust the path as necessary
 import Chat from '../component/box/chat'; // Import your Chat component
 
+
 const Home = () => {
   const [backgroundColor, setBackgroundColor] = useState('#3498db');
   const [formData, setFormData] = useState({ message: '', search: '' });
@@ -20,6 +21,7 @@ const Home = () => {
   const handleColorChange = (newColor) => {
     setBackgroundColor(newColor);
   };
+
 
   const handleBackgroundChange = () => {
     const changableColorDiv = document.getElementById('changable-color');
@@ -39,6 +41,7 @@ const Home = () => {
     e.preventDefault();
     // Add your form submission logic here
   };
+ 
 
   return (
     <div>
@@ -49,6 +52,7 @@ const Home = () => {
       </div>
       <div className="home-container">
         <div className="left">
+      
           <div className="add">
             <button className="add-btn" onClick={handleToggleUserList}>
               <img src={pic1} alt="add-image" /><p>Add Friend</p>
@@ -56,8 +60,26 @@ const Home = () => {
           </div>
           {showUserList && <UserList onUserSelect={setSelectedUser} />}
           <div className="search" id="hide" style={{ display: 'none' }}>
+            
             {/* ... */}
+
+            <form onSubmit={handleSubmit}>
+              <div className="search-box">
+                <input
+                  placeholder="Username"
+                  type="text"
+                  id="search"
+                  name="search"
+                  value={search}
+                  onChange={handleChange}
+                />
+                <button type="submit">Search</button>
+               
+              </div>
+            
+            </form>
           </div>
+         
         </div>
         <div className="right" id="changable-color">
           <ColorPicker onColorChange={handleColorChange} />

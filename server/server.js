@@ -3,9 +3,11 @@ const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
-
+const io = require('socket.io')(8098);
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
+const { isObjectIdOrHexString } = require('mongoose');
+
 
 const PORT = process.env.PORT || 8099;
 const app = express();
@@ -17,6 +19,12 @@ const server = new ApolloServer({
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {
   await server.start();
+
+  io.on('connection',(socket)=> {
+    socket.on('send-message', (message) => {
+      io.emit('message', message);
+    });
+  });
 
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
@@ -41,5 +49,45 @@ const startApolloServer = async () => {
   });
 };
 
+
 // Call the async function to start the server
   startApolloServer();
+// var socket  = require( 'socket.io' );
+// var express = require('express');
+// var app     = express();
+// var server  = require('http').createServer(app);
+// var io      = socket.listen( server );
+// var port    = process.env.PORT || 3000;
+
+// server.listen(port, function () {
+//   console.log('Server listening at port %d', port);
+// });
+
+
+// io.on('connection', function (socket) {
+
+//   socket.on( 'new_count_message', function( data ) {
+//     io.sockets.emit( 'new_count_message', { 
+//     	new_count_message: data.new_count_message
+
+//     });
+//   });
+
+//   socket.on( 'update_count_message', function( data ) {
+//     io.sockets.emit( 'update_count_message', {
+//     	update_count_message: data.update_count_message 
+//     });
+//   });
+
+//   socket.on( 'new_message', function( data ) {
+//     io.sockets.emit( 'new_message', {
+//     	name: data.name,
+//     	email: data.email,
+//     	subject: data.subject,
+//     	created_at: data.created_at,
+//     	id: data.id
+//     });
+//   });
+
+  
+// });
