@@ -6,6 +6,7 @@ const SendMessage = ({ chatId }) => {
   const [message, setMessage] = useState('');
   const [sendMessage, { loading, error }] = useMutation(SEND_MESSAGE);
 
+
   const handleSendMessage = async (event) => {
     event.preventDefault();
     if (!message.trim()) return;

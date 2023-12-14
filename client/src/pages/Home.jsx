@@ -3,6 +3,7 @@ import SendMessage from '../component/box/SendMessage'; // Adjust the path as ne
 import ColorPicker from '../component/Colorpicker'; // Adjust the path as necessary
 import pic1 from '../../../client/add.png'; // Adjust the path as necessary
 
+
 const Home = () => {
   const [backgroundColor, setBackgroundColor] = useState('#3498db');
   const [formData, setFormData] = useState({ message: '', search: '' });
@@ -12,6 +13,7 @@ const Home = () => {
   const handleColorChange = (newColor) => {
     setBackgroundColor(newColor);
   };
+
 
   const handleBackgroundChange = () => {
     const changableColorDiv = document.getElementById('changable-color');
@@ -38,6 +40,7 @@ const Home = () => {
     e.preventDefault();
     // Add your form submission logic here
   };
+ 
 
   return (
     <div>
@@ -48,6 +51,7 @@ const Home = () => {
       </div>
       <div className="home-container">
         <div className="left">
+      
           <div className="add">
             <button className="add-btn" onClick={handleButtonClick}>
               <img src={pic1} alt="add-image" /> <p>Add Friend</p>
@@ -65,9 +69,12 @@ const Home = () => {
                   onChange={handleChange}
                 />
                 <button type="submit">Search</button>
+               
               </div>
+            
             </form>
           </div>
+         
         </div>
         <div className="right" id="changable-color">
           <ColorPicker onColorChange={handleColorChange} />

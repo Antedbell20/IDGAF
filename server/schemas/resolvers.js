@@ -20,13 +20,13 @@ const resolvers = {
       if (!context.user) {
         throw AuthenticationError
       }
-      return await Chat.find({ users: { $in: [context.user._id] } }).populate('messages');
+      return await Chat.find({ users: { $in: [context.user._id] } }).populate('users');
     },
     chat: async (parent, { chatId }, context) => {
       if (!context.user) {
         throw AuthenticationError
       }
-      return await Chat.findById(chatId).populate('users');
+      return await Chat.findById(chatId).populate('messages');
     },
     messages: async (parent, { chatId }, context) => {
       if (!context.user) {
