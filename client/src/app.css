@@ -117,6 +117,7 @@ nav img {
   position: relative;
   top: 90px; 
   height: 89vh;
+  z-index: 4;
 }
 
 .add {
@@ -183,8 +184,7 @@ nav img {
 .search {
   display: flex;
   justify-content: center;
-  background-color: white;
-  border: 1px solid;
+  border: 1px solid var(--lines);
   padding: 10px;
   background-color: var(--darkest);
   border-bottom-left-radius: 10px;
@@ -198,7 +198,7 @@ nav img {
 
 .search input[type="text"] {
   width: 95%;
-  background-color: var(--main);
+  background-color: white;
   border: 0px;
   border-radius: 7px;
 }
@@ -206,7 +206,7 @@ nav img {
 .search button {
   margin-left: 5px;
   width: 30%;
-  background-color: white;
+  background-color: var(--main);
   border-radius: 7px;
   border: 0px;
   transition-timing-function: ease-in-out;
@@ -218,13 +218,9 @@ nav img {
 }
 
 /* hover animations */
-.text-box button:hover {
-  transform: translateY(-10px);
-  background-color:  #e3e0e0;
-}
 
 .search button:hover {
-  background-color:  #e3e0e0;
+  background-color:  var(--darker);
 }
 
 .add button:hover {
@@ -237,12 +233,6 @@ nav img {
 }
 
 /* different screen sizing styling */
-
-@media (max-width: 1000px) {
-  /* .text-box {
-    width: 70%;
-  } */
-}
 
 @media (max-width: 750px) {
   /* .text-box .text-area {
@@ -267,6 +257,7 @@ nav img {
   .search button {
   width: 100%;
   margin-top: 5px;
+  margin-left: 0px;
   }
 
 }

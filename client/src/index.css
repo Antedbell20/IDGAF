@@ -89,6 +89,11 @@ main {
     scale: 1.01;
 }
 
+.send-button:hover {
+    transform: translateY(-10px);
+    background-color:  #6279e3;
+  }
+
 .login-form a:hover, .signup-form a:hover {
     background-color: #6279e3;
 }
@@ -96,22 +101,22 @@ main {
 /* Home page text styling */
 .send-message-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 10px;
-  background: #f5f5f5;
+  background: #4255ac;
   position: fixed;
   bottom: 0;
-  width: 100%;
-  left: 2; 
+  width: 75%;
+  right: 0;
   box-sizing: border-box; 
+  border: 1px solid rgb(192, 192, 192);
+  z-index: 2;
 }
 
 .send-message-form {
   display: flex;
-  width: calc(100% - 20px);
-  max-width: 700px;
-  margin: auto;
+  /* width: calc(100% - 20px); */
+  width: 95%;
+  margin: 0 10px;
 }
 
 .message-input {
@@ -124,12 +129,15 @@ main {
 }
 
 .send-button {
-  background: #007bff;
+  background: #8fa3f3;
+  width: 10%;
   color: white;
   border: none;
   padding: 10px 15px;
   border-radius: 20px;
   cursor: pointer;
+  transition-timing-function: ease-out;
+  transition: all 0.8s;
 }
 
 .error-message {
@@ -140,3 +148,10 @@ main {
   text-align: center;
   transform: translateX(-50%);
 }
+
+/* Screen sizings */
+@media (max-width: 1000px) {
+    .send-button {
+      width: 20%;
+    }
+  }
