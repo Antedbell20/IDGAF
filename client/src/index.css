@@ -92,6 +92,8 @@ main {
 .login-form a:hover, .signup-form a:hover {
     background-color: #6279e3;
 }
+
+/* Home page text styling */
 .send-message-container {
   display: flex;
   justify-content: center;
@@ -101,25 +103,24 @@ main {
   position: fixed;
   bottom: 0;
   width: 100%;
-  left: 2; /* Ensure it spans the entire width from the left */
-  box-sizing: border-box; /* Include padding in the width calculation */
+  left: 2; 
+  box-sizing: border-box; 
 }
 
 .send-message-form {
   display: flex;
-  width: calc(100% - 20px); /* Adjust width to account for padding */
-  max-width: 700px; /* You can adjust this for larger screens */
+  width: calc(100% - 20px);
+  max-width: 700px;
   margin: auto;
 }
 
 .message-input {
-  flex-grow: 1; /* This makes the input field take up available space */
+  flex-grow: 1; 
   padding: 10px;
-  margin-right: 10px; /* Space between the input field and send button */
+  margin-right: 10px; 
   border-radius: 20px;
   border: 1px solid #ccc;
-  /* If the input is still too short, try setting a minimum width */
-  min-width: 0; /* This can help in some cases where flex items don't grow */
+  min-width: 0;
 }
 
 .send-button {
@@ -135,7 +136,7 @@ main {
   color: red;
   position: fixed;
   bottom: 60px;
-  width: 100%; /* Ensure error message spans the width */
-  text-align: center; /* Center the text */
+  width: 100%;
+  text-align: center;
   transform: translateX(-50%);
 }

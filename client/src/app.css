@@ -62,7 +62,7 @@ nav img {
   height: 88vh;
   background-color: #292553;
 }
-
+/* 
 .text-box {
   border: 1px solid;
   padding: 20px;
@@ -105,7 +105,7 @@ nav img {
 
 .text-box .text-area {
   width: 90%; 
-}
+} */
 
 /* left side  */
 .left {
@@ -204,6 +204,7 @@ nav img {
 }
 
 .search button {
+  margin-left: 5px;
   width: 30%;
   background-color: white;
   border-radius: 7px;
@@ -238,41 +239,40 @@ nav img {
 /* different screen sizing styling */
 
 @media (max-width: 1000px) {
-  .text-box {
+  /* .text-box {
     width: 70%;
-  }
+  } */
 }
 
 @media (max-width: 750px) {
-  .text-box .text-area {
+  /* .text-box .text-area {
     width: 75%;
   }
 
   .text-box button {
     width: 20%;
     margin-left: 10px;
+  } */
+
+  .search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .add p {
     display: none;
   }
-
-  .add button {
-    height: 50px;
-  }
   
   .search button {
   width: 100%;
+  margin-top: 5px;
   }
 
-  .change {
-    width: 150px;
-  }
 }
 
 @media screen and (min-width: 750px) {
   .search form {
-    display: flex;
     width: 100%;
   }
 }
