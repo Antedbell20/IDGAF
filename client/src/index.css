@@ -155,3 +155,27 @@ main {
       width: 20%;
     }
   }
+
+  .chat-container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically */
+  align-items: center; /* Center children horizontally */
+  width: 50%; /* Full width of its container */
+  height: 50%; /* Full height of its container */
+  position: relative; /* Positioning context for absolute children */
+}
+
+/* If the chat container has a fixed or absolute positioning */
+.chat-container {
+  position: fixed; /* or 'absolute' */
+  top: 20%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 200px; /* Width of the chat container */
+  height: 70px; /* Height of the chat container */
+ /* Background color for visibility */
+  border-radius: 10px; /* Optional border-radius for aesthetics */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  overflow: hidden; /* In case of overflow, it hides the excess */
+}

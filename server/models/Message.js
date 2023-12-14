@@ -13,6 +13,10 @@ const MessageSchema = mongoose.Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
     },
+    receiver:{
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
     chat: {
       type: Schema.Types.ObjectId,
       ref: "Chat",

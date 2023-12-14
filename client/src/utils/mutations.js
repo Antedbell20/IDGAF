@@ -55,7 +55,7 @@ export const SEND_MESSAGE = gql`
 
 
 export const GET_MESSAGES = gql`
-  query GetMessages($chatId: ID!) {
+  query getMessages($chatId: ID!) {
     getMessages(chatId: $chatId) {
       _id
       content

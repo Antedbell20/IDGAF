@@ -5,7 +5,7 @@ type User {
     _id: ID
     username: String
     email: String
-    friends: [User]
+    Friends: [User]
     profilePic: String
 }
 
@@ -39,18 +39,27 @@ type Query {
     chats: [Chat]
     chat(chatId: ID!): Chat
     messages(chatId: ID!): [Message]
+    getFriends: [User]
+    getAllUsersExceptMe: [User]
+    findFriendByUsername(username: String!): User
+    getChatHistoryWithUser(username: String!): [Message]
+     searchUsersByUsername(username: String!): [User]
+
 }
 
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addFriend(friendId: ID!): User
+    addFriend(username: String!): User
     removeFriend(friendId: ID!): User
     createChat(chatName: String!, users: [ID!]!): Chat
     sendMessage(content: String!, chatId: ID!): Message
     updateChat(chatId: ID!, chatName: String, groupPic: String): Chat
     addUsersToChat(chatId: ID!, users: [ID!]!): Chat
     removeUserFromChat(chatId: ID!, userId: ID!): Chat
+    getMessages(chatId: ID!): Message
+    sendMessageToUser(username: String!, content: String!): Message
+
 }
 
 schema {

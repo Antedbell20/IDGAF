@@ -1,0 +1,40 @@
+/* UserList.module.css */
+
+.container {
+  position: relative;
+  height: 100vh;
+  /* ... other styles ... */
+}
+
+.usersSection {
+  position: absolute;
+top: 10px;
+  right: 20px;
+}
+
+.userListContainer {
+  /* Set a width for the user list and other styles as before */
+  /* ... other styles ... */
+}
+
+.userListItem {
+  /* Styles for unselected users */
+  padding: 10px; /* Add padding for spacing */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add transition for smooth animation */
+  margin-bottom: 5px; /* Add margin to separate user items */
+  transform: translateY(5px); /* Move the item down slightly */
+}
+
+.userListItem:hover {
+  /* Styles for hovering users */
+  transform: translateY(0); /* Reset the transform for hover state */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.selectedUser {
+  background-color: #3498db;
+  color: white;
+  /* Add additional styles for the selected user as needed */
+  transform: translateY(5px); /* Move the selected item down slightly */
+  box-shadow: none; /* Remove shadow for the selected item */
+}

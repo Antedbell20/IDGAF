@@ -84,3 +84,32 @@ export const QUERY_MESSAGES = gql`
     }
   }
 `;
+
+export const GET_ALL_USERS = gql`
+  query GetAllUsersExceptMe {
+    getAllUsersExceptMe {
+      username
+    }
+  }
+`;
+export const SEARCH_USERS = gql`
+  query SearchUsers($username: String!) {
+    searchUsers(username: $username) {
+      username
+    }
+  }
+`;
+export const ADD_FRIEND = gql`
+  mutation addFriend($username: String!) {
+    addFriend(username: $username) {
+      _id
+      username
+      email
+      friends {
+        _id
+        username
+      }
+    }
+  }
+`;
+
