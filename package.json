@@ -13,12 +13,17 @@
 <<<<<<< HEAD
     "install": "cd server && npm install && cd ../client && npm install",
     "seed": "cd server && npm run seed",
+<<<<<<< Updated upstream
     "build": "cd client && npm run build",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
 =======
     "seed": "cd server && npm run seed",
     "build": "cd client && npx vite build && npm install --production=false"
 >>>>>>> ca90e76668cbed7db8c56fc268a1787a48a97b95
+=======
+    "build": "cd client && npm run build"
+    
+>>>>>>> Stashed changes
   },
 
   "keywords": [],
