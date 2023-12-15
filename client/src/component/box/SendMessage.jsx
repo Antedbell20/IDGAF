@@ -5,19 +5,25 @@ import { SEND_MESSAGE } from '../../utils/mutations'; // Adjust the path as nece
 const SendMessage = ({ chatId }) => {
   const [message, setMessage] = useState('');
   const [sendMessage, { loading, error }] = useMutation(SEND_MESSAGE);
+  const [sentMessages, setSentMessages] = useState([]); // State to store sent messages
 
   const handleSendMessage = async (event) => {
     event.preventDefault();
     if (!message.trim()) return;
 
     try {
-   
-      await sendMessage({
+      const { data } = await sendMessage({
         variables: {
           content: message,
           chatId,
         },
       });
+
+      // Update the UI state with the sent message
+      if (data && data.sendMessage) {
+        setSentMessages((prevMessages) => [...prevMessages, data.sendMessage]);
+      }
+
       setMessage(''); // Clear the message input after sending
     } catch (err) {
       console.error("Error sending message:", err);
@@ -26,6 +32,15 @@ const SendMessage = ({ chatId }) => {
 
   return (
     <div className="send-message-container">
+      <div className="chat-box">
+        {/* Display sent messages */}
+        {sentMessages.map((sentMessage) => (
+          <div key={sentMessage._id} className="chat-message">
+            <p>{sentMessage.content}</p>
+          </div>
+        ))}
+      </div>
+
       <form onSubmit={handleSendMessage} className="send-message-form">
         <input
           type="text"

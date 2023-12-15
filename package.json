@@ -29,8 +29,9 @@
     "react-router-dom": "^6.20.1",
     "socket.io": "^4.7.2",
     "styled-components": "^6.1.1"
-  },"engines": {
-  "node": "your-node-version",
-  "npm": "your-npm-version"
-}
+  },
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  }
 }
