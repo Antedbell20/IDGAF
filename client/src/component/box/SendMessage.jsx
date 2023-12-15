@@ -38,7 +38,7 @@ const SendMessage = ({ chatId }) => {
           Send
         </button>
       </form>
-      {error && <p className="error-message">Could not send message: {error.message}</p>}
+      {error && <p className="error-message">Login to send messages {error.message}</p>}
     </div>
   );
 };
