@@ -231,3 +231,34 @@ main {
     margin: 0;
   }
 }
+
+  .chat-box {
+    display: flex;
+    flex-direction: column-reverse; /* New messages appear at the bottom */
+    align-items: flex-end; /* Align user's messages to the right */
+    width: 100%; /* Adjust the width as necessary */
+    padding: 10px; /* Padding inside the chat box */
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: calc(100vh - 120px); /* Height minus the input area, adjust as necessary */
+    position: relative;
+  }
+
+ .chat-message {
+  max-width: 80%;
+  word-wrap: break-word;
+  margin-bottom: 20px; /* Space between messages */
+  align-self: flex-end; /* Align user's messages to the right */
+}
+
+
+  /* Style for the actual message content */
+ .message {
+  background-color: blue; /* User's message background */
+  color: white;
+  padding: 8px 16px; /* Padding around text */
+  border-radius: 20px; /* Rounded corners for bubble effect */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  margin-bottom: 10px; /* Space between messages */
+  max-width: fit-content; /* Let the width fit the content */
+}
+  

@@ -31,15 +31,19 @@ const SendMessage = ({ chatId }) => {
   };
 
   return (
-    <div className="send-message-container">
+    <div >
       <div className="chat-box">
         {/* Display sent messages */}
         {sentMessages.map((sentMessage) => (
           <div key={sentMessage._id} className="chat-message">
-            <p>{sentMessage.content}</p>
+            <div>
+
+            <p className="message">{sentMessage.content}</p>
+            </div>
           </div>
         ))}
       </div>
+      <div className="send-message-container">
 
       <form onSubmit={handleSendMessage} className="send-message-form">
         <input
@@ -54,6 +58,7 @@ const SendMessage = ({ chatId }) => {
         </button>
       </form>
       {error && <p className="error-message">Could not send message: {error.message}</p>}
+    </div>
     </div>
   );
 };
