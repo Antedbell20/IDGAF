@@ -34,7 +34,7 @@
     "styled-components": "^6.1.1"
   },
   "engines": {
-    "node": "your-node-version",
-    "npm": "your-npm-version"
+    "node": "18.18.0",
+    "npm": "9.8.1"
   }
 }
