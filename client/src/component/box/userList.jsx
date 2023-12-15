@@ -20,7 +20,7 @@ function UserList() {
   });
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (error) return <p> Login to see users(</p>;
 
   const handleUserSelect = (user) => {
     setSelectedUser(user);
