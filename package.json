@@ -7,9 +7,9 @@
     "start": "node server --ignore client",
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npx vite build"
+    "build": "cd client && npx vite build && npm install --production=false"
   },
-    
+
   "keywords": [],
   "author": "",
   "license": "MIT",
