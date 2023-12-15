@@ -5,7 +5,7 @@
 ## Description
 IDGAF or Instant Digital Gateway for Acquiring Friends is a MERN application made to Chat with any and every user on the app. Login or Signup to be able to chat, pick a color and change chat backgrounds. This project's main goal is to chat with users anywhere, weather it is locally, across the county, or in a different country entirely. Become as anonymous as you please, make as many accounts as you want. This project is currently unfinished and is missing a few features, feel free to fork this repo and add some of your own features.
 
-<video src="client/IDGAF-converted.mp4" controls title="Title"></video>
+![Alt text](client/IDGAFGIF.gif)
 
 ## Table of Contents
         
