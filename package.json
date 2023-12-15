@@ -1,17 +1,15 @@
 {
   "name": "IDGAF",
   "version": "1.0.0",
-  "description": "",
   "scripts": {
     "install": "npm run install-all",
     "install-all": "cd server && npm i && cd ../client && npm i",
     "build": "npm run build-all",
     "build-all": "cd client && npm run build",
     "start": "node server/server.js",
-    "dev": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\""
+    "dev": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
+    "develop": "concurrently \"npm run start\" \"npm run dev\""
   },
-  "keywords": [],
-  "author": "",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^5.1.0"
@@ -30,17 +28,10 @@
     "styled-components": "^6.1.1"
   },
   "engines": {
-    "node": "18.18.0",
-    "npm": "9.8.1"
+    "node": "14.x",
+    "npm": "6.x"
   },
   "directories": {
     "output": "client/build"
-  },
-  "scripts": {
-    "build": "npm run build-all",
-    "build-all": "cd client && npm run build",
-    "start": "node server/server.js",
-    "install-all": "cd server && npm i && cd ../client && npm i",
-    "develop": "concurrently \"npm run start\" \"npm run dev\""
   }
 }
