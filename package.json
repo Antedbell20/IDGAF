@@ -1,31 +1,15 @@
 {
-  "name": "idgaf",
+  "name": "IDGAF",
   "version": "1.0.0",
-<<<<<<< HEAD
   "description": "Your project description goes here",
-=======
-  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
->>>>>>> ca90e76668cbed7db8c56fc268a1787a48a97b95
   "main": "server/server.js",
   "scripts": {
     "start": "node server --ignore client",
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
-<<<<<<< HEAD
     "install": "cd server && npm install && cd ../client && npm install",
     "seed": "cd server && npm run seed",
-<<<<<<< Updated upstream
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
-=======
-    "seed": "cd server && npm run seed",
-    "build": "cd client && npx vite build && npm install --production=false"
->>>>>>> ca90e76668cbed7db8c56fc268a1787a48a97b95
-=======
     "build": "cd client && npm run build"
-    
->>>>>>> Stashed changes
   },
-
   "keywords": [],
   "author": "Your Name",
   "license": "MIT",
@@ -36,13 +20,7 @@
     "@apollo/server": "^4.9.5",
     "@vitejs/plugin-react": "^4.2.1",
     "apollo-server": "^3.13.0",
-<<<<<<< HEAD
-=======
-    "bcrypt": "^5.1.1",
-    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
-    "express": "^4.18.2",
->>>>>>> ca90e76668cbed7db8c56fc268a1787a48a97b95
     "graphql": "^16.8.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.3",
@@ -52,11 +30,6 @@
     "styled-components": "^6.1.1"
   },
   "engines": {
-<<<<<<< HEAD
     "node": "14.x"
-=======
-    "node": "18.18.0",
-    "npm": "9.8.1"
->>>>>>> ca90e76668cbed7db8c56fc268a1787a48a97b95
   }
 }
